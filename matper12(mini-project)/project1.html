@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 - Headphones Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="project1-style.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Headphones</h1>
+            <ul>
+                <li><a href="#hero">home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="tombol-mode">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070" alt="Headphones" />
+            <h2>Dengarkan Music dengan Kualitas Terbaik</h2>
+            <p>Temukan pengalaman mendengarkan baru dengan design premium dan suara jernih.</p>
+            <button class="cta">Belanja sekarang</button>
+        </section>
+
+    <section id="features">
+        <h2>Fitur Unggulan</h2>
+        <div class="fitur-grid">
+            <article>
+                <h3>Suara jernih</h3>
+                <p>kualitas audio tinggi yang memanjakan telingamu.</p>
+            </article>
+            <article>
+                <h3>Design nyaman</h3>
+                <p>Ergonomis dan ringan untuk pengalaman lama.</p>
+            </article>
+            <article>
+                <h3>Baterai tahan lama</h3>
+                <p>Nikmati music hingga 20 jam tanpa henti.</p>
+            </article>
+        </div>
+    </section>
+    </main>
+
+    <footer id="contact">
+        <p>© 2025 Headphones store | dibuat dengan hati</p>
+    </footer>
+
+    <script>
+        const tombol = document.querySelector('#tombol-mode')
+        tombol.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        })
+    </script>
+</body>
+</html>
