@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #222;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 16px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #0a66ff;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #004dd1;
+        }
+
+        .pesan-box {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border-left: 5px solid #0a66ff;
+        }
+
+        .nama {
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .isi {
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Buku Tamu Digital</h1>
+
+    <form method="POST" action="">
+        <label>Nama:</label>
+        <input type="text" name="nama" placeholder="Masukin Nama" required>
+
+        <label>Pesan:</label>
+        <textarea name="pesan" rows="4" placeholder="Tulis apa yang pengen kamu kirim disini" required></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Pesan yang Masuk</h2>
+
+    {% if semua_pesan and semua_pesan|length > 0 %}
+        {% for pesan in semua_pesan|reverse %}
+            <div class="pesan-box">
+                <div class="nama">{{ pesan.nama }}</div>
+                <div class="isi">{{ pesan.pesan }}</div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center; color:#555;">Belum ada pesan. Jadilah yang pertama!</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
